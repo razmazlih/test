@@ -17,6 +17,9 @@ jobs:
       run: |
         sed -i 's/YOUR_SECRET_HERE/${{ secrets.MY_SECRET }}/' script.js
 
+    - name: Print script.js content
+    run: cat script.js
+
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
       with:
