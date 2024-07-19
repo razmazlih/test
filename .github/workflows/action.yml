@@ -11,27 +11,11 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0  # Get full history
-
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '16'
+      uses: actions/checkout@v2
 
     - name: Replace secret in JS
       run: |
         sed -i 's/YOUR_SECRET_HERE/${{ secrets.MY_SECRET }}/' script.js
-
-    - name: Print script.js content
-      run: cat script.js
-
-    - name: Debug Git
-      run: |
-        git config --global --add safe.directory /github/workspace
-        git status
-        git remote -v
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
