@@ -1,4 +1,4 @@
-const secret = 'hi from secrets';
+const secret = '123123123123123123';
 const tag = document.getElementById('secret');
 
 console.log(secret);
