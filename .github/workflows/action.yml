@@ -16,6 +16,7 @@ jobs:
     - name: Replace secret in JS
       run: |
         sed -i 's/YOUR_SECRET_HERE/${{ secrets.MY_SECRET }}/' script.js
+        cat script.js # הדפסת התוכן של script.js ללוג
 
     - name: Deploy to GitHub Pages
       uses: peaceiris/actions-gh-pages@v3
